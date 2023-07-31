@@ -1,0 +1,30 @@
+import random
+
+def get_choices():
+  player_choice = input(print("Enter a choice {rock, paper, scissors}: "))
+  options = ["rock", "paper", "scissors"]
+  comp_choice = random.choice(options)
+  choices = {"player": player_choice, "comp": comp_choice}
+
+  return  choices
+  
+def check_win(player, comp):
+  print(f"you chose {player}\ncomp chose {comp}")
+  if player == comp:
+    return "Its a Tie!!"
+  elif player == "rock" and comp == "scissors":
+    return "You win"
+  elif player == "paper" and comp == "rock":
+    return "You win"
+  elif player == "scissors" and comp == "paper": 
+    return "You win"
+  else:
+    return "You Lost"
+  
+choices = get_choices()
+result =  check_win(choices["player"], choices["comp"])
+print(result)
+
+  
+  
+
